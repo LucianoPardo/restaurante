@@ -3,7 +3,7 @@
 Web de gestión de un restaurante, creada como proyecto final académico.
 Es la migración de una primera versión hecha en Flask a **NestJS + React**.
 
-**Desarrollado por:** Jazmin Benitez y Luciano Pardo
+**Desarrollado por:**Luciano Pardo
 
 ## Funcionalidades
 
