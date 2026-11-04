@@ -1,0 +1,152 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthPayload {
+  access_token: String!
+  user: AuthUser!
+}
+
+type AuthUser {
+  id: Int!
+  name: String!
+  role: String!
+}
+
+input CreateEmployeeInput {
+  email: String!
+  lastName: String!
+  name: String!
+  password: String!
+  role: String!
+}
+
+input CreateReservationInput {
+  comentario: String
+  fecha: String!
+  numeroPersonas: Int!
+}
+
+input CreateSaleInput {
+  fecha: String!
+  monto: Float!
+}
+
+input CreateSupplyInput {
+  category: String!
+  name: String!
+  price: Float!
+  quantity: Int!
+}
+
+input CreateUserInput {
+  email: String!
+  lastName: String!
+  name: String!
+  password: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type MessageResponse {
+  message: String!
+}
+
+type MonthlySales {
+  data: [Float!]!
+  labels: [String!]!
+}
+
+type Mutation {
+  cancelReservation(id: Int!): MessageResponse!
+  createEmployee(input: CreateEmployeeInput!): User!
+  createReservation(input: CreateReservationInput!): Reservation!
+  createSale(input: CreateSaleInput!): Sale!
+  createSupply(input: CreateSupplyInput!): Supply!
+  login(input: LoginInput!): AuthPayload!
+  register(input: CreateUserInput!): User!
+  removeEmployee(id: Int!): MessageResponse!
+  removeSale(id: Int!): MessageResponse!
+  removeSupply(id: Int!): MessageResponse!
+  updateEmployee(id: Int!, input: UpdateEmployeeInput!): User!
+  updateMe(input: UpdateProfileInput!): User!
+  updateSupply(id: Int!, input: UpdateSupplyInput!): Supply!
+}
+
+type Query {
+  employee(id: Int!): User!
+  employees: [User!]!
+  me: User!
+  monthlySales: MonthlySales!
+  myReservations: [Reservation!]!
+  reservations: [Reservation!]!
+  sales: [Sale!]!
+  supplies(category: String): [Supply!]!
+  supply(id: Int!): Supply!
+  supplyCategories: [String!]!
+}
+
+type Reservation {
+  comentario: String
+  createdAt: DateTime!
+  fecha: String!
+  id: Int!
+  numeroPersonas: Int!
+  user: User
+}
+
+type Sale {
+  fecha: String!
+  id: Int!
+  monto: Float!
+}
+
+type Supply {
+  category: String!
+  id: Int!
+  name: String!
+  price: Float!
+  quantity: Int!
+}
+
+input UpdateEmployeeInput {
+  email: String
+  lastName: String
+  name: String
+  password: String
+  role: String
+}
+
+input UpdateProfileInput {
+  direccion: String
+  email: String
+  lastName: String
+  name: String
+  password: String
+  telefono: String
+}
+
+input UpdateSupplyInput {
+  category: String
+  name: String
+  price: Float
+  quantity: Int
+}
+
+type User {
+  direccion: String
+  email: String!
+  id: Int!
+  lastName: String!
+  name: String!
+  role: String!
+  telefono: String
+}

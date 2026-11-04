@@ -1,0 +1,25 @@
+/* Estilos comunes a toda la app */
+
+body {
+  margin: 0;
+}
+
+/* Cada página es el primer <div> dentro de #root (en Flask era el <body>) */
+#root > div {
+  box-sizing: border-box;
+}
+
+/* Los botones y campos usan la misma letra que la página */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.page-loading {
+  padding: 40px;
+  text-align: center;
+  color: #777;
+  font-family: "Poppins", sans-serif;
+}

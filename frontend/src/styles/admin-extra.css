@@ -1,0 +1,277 @@
+/* ==========================================================
+   Estilos nuevos de la versión React (no existían en Flask).
+   ========================================================== */
+
+/* Animaciones que style.css usaba pero nunca definía */
+@keyframes form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* "Cerrar Sesión" del panel ahora es un <button> */
+.dashboard-page .logout-btn {
+  font-family: inherit;
+}
+
+/* ---------- Login y registro ---------- */
+
+/* El "ojito" de mostrar contraseña ahora es un <button> */
+.login-page .toggle-password,
+.register-page .toggle-password {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Mensajes de error / éxito (en Flask el error del login nunca se mostraba) */
+.login-page .auth-flash,
+.register-page .auth-flash {
+  margin-bottom: 20px;
+}
+
+.login-page .flash,
+.register-page .flash {
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.login-page .flash.error,
+.register-page .flash.error {
+  background-color: rgba(244, 67, 54, 0.15);
+  border: 1px solid #f44336;
+  color: #ff8a80;
+}
+
+.login-page .flash.success,
+.register-page .flash.success {
+  background-color: rgba(76, 175, 80, 0.15);
+  border: 1px solid #4caf50;
+  color: #a5d6a7;
+}
+
+/* ---------- Editar empleado: mensajes (copiado de Crear empleado) ---------- */
+
+.edit-employee-page .flash-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.edit-employee-page .flash {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 5px 0;
+  border: 1px solid transparent;
+}
+
+.edit-employee-page .flash.success {
+  background-color: #e8f5e9;
+  color: #4caf50;
+  border-color: #c8e6c9;
+}
+
+.edit-employee-page .flash.error {
+  background-color: #ffebee;
+  color: #f44336;
+  border-color: #ffcdd2;
+}
+
+/* ---------- Tablas: fila "no hay datos" ---------- */
+
+.employees-page .empty-row td,
+.supplies-page .empty-row td {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* ==========================================================
+   Reportes de ventas (en Flask los estilos estaban dentro de
+   charts.html; ahora se suma el formulario para cargar ventas)
+   ========================================================== */
+
+.charts-page {
+  font-family: "Poppins", sans-serif;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  padding-top: 50px;
+  min-height: 100vh;
+}
+
+.charts-page h2 {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.charts-page .chart-box {
+  width: 100%;
+  max-width: 700px;
+}
+
+.charts-page canvas {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.charts-page .btn.comeback {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: 2px solid #c5cae9;
+  background-color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.charts-page .btn.comeback:hover {
+  background-color: #e8eaf6;
+  border-color: #3f51b5;
+  box-shadow: 0 4px 10px rgba(63, 81, 181, 0.2);
+}
+
+.charts-page .flash-container-list {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.charts-page .flash {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 5px;
+  border: 1px solid transparent;
+}
+
+.charts-page .flash.success {
+  background-color: #e8f5e9;
+  color: #4caf50;
+  border-color: #c8e6c9;
+}
+
+.charts-page .flash.error {
+  background-color: #ffebee;
+  color: #f44336;
+  border-color: #ffcdd2;
+}
+
+.charts-page .empty {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  padding: 14px;
+}
+
+.charts-page .sales-panel {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.charts-page .sale-form {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.charts-page .sale-form h3 {
+  margin: 0;
+  color: #333333;
+}
+
+.charts-page .sale-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  color: #555555;
+  font-size: 0.9em;
+}
+
+.charts-page .sale-form input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.charts-page .sale-form button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.charts-page .sale-form button:hover {
+  background-color: #303f9f;
+}
+
+.charts-page .sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.charts-page .sales-table th {
+  background-color: #4a4a4a;
+  color: white;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.charts-page .sales-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.charts-page .sales-table .delete {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-weight: 600;
+  cursor: pointer;
+}

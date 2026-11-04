@@ -1,0 +1,426 @@
+/* ==========================================================
+   Área de clientes (antes static/css/style_users.css).
+   Todo va dentro de .client-layout para no pisar los estilos
+   del panel de administración (admin.css).
+   ========================================================== */
+
+:where(.client-layout, .client-layout *) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.client-layout {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.client-layout header {
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+}
+
+.client-layout header .logo {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.client-layout nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.client-layout nav a:hover,
+.client-layout nav a.active {
+  color: #c49b63;
+}
+
+.client-layout .user {
+  font-size: 0.9em;
+}
+
+/* "Cerrar Sesion" ahora es un <button> */
+.client-layout .user button {
+  display: block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.client-layout .user button:hover {
+  color: #c49b63;
+}
+
+.client-layout .banner {
+  background: url("/img/principal.jpg") no-repeat center/cover;
+  color: white;
+  text-align: left;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.client-layout .banner h1 {
+  font-size: 2.3em;
+}
+
+/* "EXPLORAR MENÚ" ahora es un enlace al menú */
+.client-layout .banner-button {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #c49b63;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.client-layout .banner-button:hover {
+  background-color: #a37e4d;
+}
+
+.client-layout .content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+
+.client-layout .menu-section {
+  flex: 3;
+}
+
+.client-layout .menu-section h2 {
+  margin-bottom: 20px;
+}
+
+.client-layout .menu-items {
+  display: flex;
+  gap: 20px;
+}
+
+.client-layout .item {
+  display: block;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+
+.client-layout .item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.client-layout .item p {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.client-layout .sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.client-layout .card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.client-layout .card h3 {
+  margin-bottom: 10px;
+}
+
+.client-layout .card a {
+  color: #c49b63;
+  text-decoration: none;
+}
+
+.client-layout .card.reserva form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.client-layout .card.reserva input,
+.client-layout .card.reserva textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.client-layout .card.reserva button {
+  background-color: #c49b63;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.client-layout .card.reserva button:hover {
+  background-color: #a37e4d;
+}
+
+/* ---------- PERFIL ---------- */
+
+.client-layout .perfil-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 70vh;
+  background-color: #f5f5f5;
+}
+
+.client-layout .perfil-card {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
+  text-align: left;
+}
+
+.client-layout .perfil-card h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: #333;
+  border-bottom: 2px solid #d2b373;
+  padding-bottom: 8px;
+}
+
+/* Formulario en dos columnas: etiqueta | campo */
+.client-layout .perfil-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+}
+
+.client-layout .perfil-card label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.client-layout .perfil-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f0f4f8;
+}
+
+.client-layout .perfil-card input:focus {
+  outline: none;
+  border-color: #d2b373;
+}
+
+.client-layout .perfil-card .btn {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #d2b373;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.client-layout .perfil-card .btn:hover {
+  background-color: #bfa063;
+  transform: translateY(-2px);
+}
+
+.client-layout .perfil-card .btn.secondary {
+  margin-top: 0;
+  background-color: #eeeeee;
+  color: #555;
+}
+
+.client-layout .perfil-card .btn.secondary:hover {
+  background-color: #e0e0e0;
+}
+
+/* Campos de solo lectura */
+.client-layout .perfil-card input[readonly] {
+  background-color: #f0f4f8;
+  border: 1px solid #ddd;
+  color: #555;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---------- RESERVAS ---------- */
+
+.client-layout .reserva table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.client-layout .reserva thead {
+  background-color: #c49b63;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.client-layout .reserva th,
+.client-layout .reserva td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.client-layout .reserva tbody tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.client-layout .reserva tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.client-layout .reserva p {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.client-layout .mis_reservas {
+  margin-left: 20%;
+}
+
+/* ==========================================================
+   Nuevo en la versión React
+   ========================================================== */
+
+/* Páginas del menú (en Flask estas clases no tenían estilos) */
+.client-layout .page-section {
+  padding: 40px 60px;
+}
+
+.client-layout .page-section h2 {
+  margin-bottom: 20px;
+}
+
+.client-layout .back-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #a37e4d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.client-layout .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.client-layout .menu-card {
+  display: block;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+
+.client-layout .menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.client-layout .menu-card p {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.client-layout a.menu-card:hover,
+.client-layout a.item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensajes (en Flask los flash del área de clientes nunca se mostraban) */
+.client-layout .flash-stack {
+  margin-bottom: 15px;
+}
+
+.client-layout .flash {
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.client-layout .flash.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.client-layout .flash.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Botón para cancelar una reserva */
+.client-layout .btn-cancel {
+  background: none;
+  border: 1px solid #c62828;
+  color: #c62828;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+.client-layout .btn-cancel:hover {
+  background-color: #c62828;
+  color: white;
+}
